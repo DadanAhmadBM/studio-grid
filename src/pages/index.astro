@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Partners from '../components/Partners';
+import About from '../components/About';
+import Services from '../components/Services';
+import FAQ from '../components/FAQ';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
+import '../styles/global.css';
+---
+
+<Layout>
+  <!-- Navbar: client:load so scroll listener works immediately -->
+  <Navbar client:load />
+
+  <!-- Hero: client:load for parallax on scroll -->
+  <Hero client:load />
+
+  <!-- Partners marquee: client:visible for performance -->
+  <Partners client:visible />
+
+  <!-- About with scroll-triggered word animation -->
+  <About client:visible />
+
+  <!-- Services with hover interaction -->
+  <Services client:visible />
+
+  <!-- FAQ accordion -->
+  <FAQ client:visible />
+
+  <!-- Contact CTA -->
+  <Contact client:visible />
+
+  <!-- Footer (minimal interactivity) -->
+  <Footer client:visible />
+</Layout>
